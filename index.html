@@ -1,0 +1,1172 @@
+html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王伟 · 数据工程师简历</title>
+  <!-- Font Awesome 5 (专业图标库) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #d4dde9 0%, #b6c5da 100%);
+      font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      color: #1e2b3c;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 主卡片 — 雍容白，极简阴影 */
+    .resume-card {
+      max-width: 1100px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 30px 50px rgba(0, 20, 30, 0.2), 0 10px 20px rgba(0, 10, 20, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* 双栏布局 (grid 优雅) */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 32% 68%;
+      gap: 0;
+    }
+
+    /* ========== 左侧栏 ========== */
+    .sidebar {
+      background-color: #f4f8fe;  /* 极浅蓝灰，干净清爽 */
+      padding: 2.2rem 1.8rem;
+      border-right: 1px solid rgba(0, 70, 120, 0.08);
+    }
+
+    .name-title {
+      margin-bottom: 2rem;
+    }
+    .name-title h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #0a2942;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .name-title .subhead {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #2c5778;
+      background: rgba(40, 110, 170, 0.06);
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      border-left: 4px solid #2e7eb0;
+    }
+
+    /* 联系信息 (图标+文字) */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      color: #1e3d5b;
+      word-break: break-word;
+    }
+    .contact-item i {
+      width: 1.8rem;
+      font-size: 1.2rem;
+      color: #2e7eb0;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-item a:hover {
+      border-color: #2e7eb0;
+    }
+
+    /* 侧边栏小标题 */
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #103450;
+      margin: 2rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid rgba(35, 100, 150, 0.2);
+      padding-bottom: 0.45rem;
+    }
+    .section-title i {
+      color: #2e7eb0;
+      margin-right: 0.7rem;
+      font-size: 1.2rem;
+      width: 1.6rem;
+    }
+
+    /* 技能组 (标签式) */
+    .skill-category {
+      margin-bottom: 1.5rem;
+    }
+    .skill-category h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1c4b70;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.3px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      background: white;
+      border: 1px solid #cdddec;
+      color: #1d3e5e;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,30,50,0.02);
+      transition: all 0.2s;
+    }
+    .skill-tag:hover {
+      background: #e1effa;
+      border-color: #2e7eb0;
+      transform: translateY(-1px);
+    }
+
+    /* 语言 & 证书 列表 */
+    .lang-item, .cert-item {
+      margin-bottom: 0.7rem;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: baseline;
+    }
+    .lang-item i, .cert-item i {
+      color: #2e7eb0;
+      width: 1.6rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .lang-item span, .cert-item span {
+      color: #1b3c57;
+    }
+    .cert-item {
+      line-height: 1.4;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(60, 110, 150, 0.15);
+      margin: 1.8rem 0 1rem 0;
+    }
+
+    /* ========== 右侧主内容 ========== */
+    .main-content {
+      background: white;
+      padding: 2.2rem 2.2rem 2.2rem 2rem;
+    }
+
+    /* 个人概要卡片 */
+    .summary {
+      background: #f0f7fc;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #2e7eb0;
+      box-shadow: 0 4px 10px rgba(0, 30, 50, 0.04);
+    }
+    .summary p {
+      font-size: 1rem;
+      color: #1f3e57;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    /* 主区域标题 */
+    .main-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0a2942;
+      margin: 1.6rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+    }
+    .main-title i {
+      color: #2e7eb0;
+      margin-right: 0.8rem;
+      font-size: 1.3rem;
+      width: 1.8rem;
+    }
+    .main-title:first-of-type {
+      margin-top: 0;
+    }
+
+    /* 工作经历条目 */
+    .exp-item {
+      margin-bottom: 2rem;
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.3rem;
+    }
+    .exp-header h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #103450;
+    }
+    .exp-header .company {
+      font-weight: 500;
+      color: #2e7eb0;
+      background: #ecf3fa;
+      padding: 0.2rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+    }
+    .exp-date {
+      font-size: 0.9rem;
+      color: #54738f;
+      background: #f5f5f5;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+    .exp-desc {
+      margin-top: 0.7rem;
+      padding-left: 0.3rem;
+    }
+    .exp-desc ul {
+      list-style: none;
+    }
+    .exp-desc li {
+      font-size: 0.95rem;
+      color: #244b67;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .exp-desc li i {
+      color: #2e7eb0;
+      font-size: 0.7rem;
+      margin-top: 0.5rem;
+      width: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* 教育 & 项目 简洁样式 */
+    .edu-item, .project-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+    }
+    .edu-item h4, .project-item h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #103450;
+    }
+    .edu-meta, .project-meta {
+      font-size: 0.9rem;
+      color: #54738f;
+    }
+    .edu-desc, .project-desc {
+      width: 100%;
+      margin-top: 0.2rem;
+      font-size: 0.94rem;
+      color: #2b4e6e;
+      padding-left: 0.2rem;
+    }
+    .project-item {
+      border-bottom: 1px dashed #d1e0ec;
+      padding-bottom: 0.9rem;
+    }
+    .project-item:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式：小屏幕两列合并 */
+    @media screen and (max-width: 720px) {
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,70,120,0.1);
+      }
+      body {
+        padding: 0.8rem;
+      }
+      .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+
+    /* 点缀：精细调整 */
+    .badge-num {
+      font-weight: 400;
+      color: #467a9e;
+    }
+    .separator-dot {
+      color: #b0c9dd;
+      margin: 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-card">
+    <div class="resume-grid">
+      <!-- 左侧：个人信息 + 技能 + 证书 -->
+      <div class="sidebar">
+        <div class="name-title">
+          <h1>王伟</h1>
+          <div class="subhead">资深数据工程师</div>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>+86 138 0013 8000</span>
+        </div>
+        <div class="contact-item">
+          <i class="far fa-envelope"></i>
+          <a href="mailto:wei.wang@example.com">wei.wang@example.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>北京 · 朝阳区</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="#">linkedin.com/in/wei-wang</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="#">github.com/weidata</a>
+        </div>
+
+        <hr>
+
+        <!-- 专业技能 (分类标签) -->
+        <div class="section-title">
+          <i class="fas fa-code"></i> 核心技能
+        </div>
+
+        <div class="skill-category">
+          <h3>编程语言</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Scala</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>大数据框架</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Hadoop</span>
+            <span class="skill-tag">Flink</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">Hive</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>云平台 & 数据库</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS (EMR/Redshift)</span>
+            <span class="skill-tag">阿里云 MaxCompute</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Cassandra</span>
+            <span class="skill-tag">ClickHouse</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>工具 & 编排</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Airflow</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">DataWorks</span>
+          </div>
+        </div>
+
+        <!-- 语言能力 -->
+        <div class="section-title">
+          <i class="fas fa-globe-asia"></i> 语言
+        </div>
+        <div class="lang-item">
+          <i class="fas fa-check-circle"></i>
+          <span>中文 · 母语</span>
+        </div>
+        <div class="lang-item">
+          <i class="fas fa-check-circle"></i>
+          <span>英语 · 流利 (IELTS 7.0，技术文档读写)</span>
+        </div>
+
+        <!-- 专业认证 -->
+        <div class="section-title">
+          <i class="fas fa-certificate"></i> 认证
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-award"></i>
+          <span>阿里云大数据专业认证 (ACP)</span>
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-award"></i>
+          <span>AWS Certified Data Analytics – Specialty</span>
+        </div>
+        <div class="cert-item">
+          <i class="fas fa-award"></i>
+          <span>Cloudera Certified Professional: Data Engineer</span>
+        </div>
+      </div>
+
+      <!-- 右侧：概要 + 工作经历 + 教育 + 项目 -->
+      <div class="main-content">
+        <!-- 专业概要 -->
+        <div class="summary">
+          <p><i class="fas fa-quote-left" style="color: #2e7eb0; opacity: 0.5; margin-right: 6px;"></i> 
+            拥有6年以上数据工程经验，主导过多个大规模数据平台建设。精通数据 pipeline 设计与优化，具备实时计算和离线数据仓库的丰富实践。善于将业务需求转化为技术方案，并通过数据治理提升数据质量。具有跨团队协作能力和良好的沟通能力。
+          </p>
+        </div>
+
+        <!-- 工作经历 -->
+        <div class="main-title">
+          <i class="fas fa-briefcase"></i> 工作经历
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+              <h3>高级数据工程师</h3>
+              <span class="company">北京云创科技公司</span>
+            </div>
+            <span class="exp-date"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i>2020.09 – 至今</span>
+          </div>
+          <div class="exp-desc">
+            <ul>
+              <li><i class="fas fa-chevron-right"></i> 设计并构建实时数据采集和计算平台，基于 Kafka + Spark Streaming 处理每日 10TB+ 用户行为数据，延迟低于5分钟。</li>
+              <li><i class="fas fa-chevron-right"></i> 重构离线数仓模型，引入分区和 bucketing 优化，将核心 ETL 作业执行时间缩短 35%。</li>
+              <li><i class="fas fa-chevron-right"></i> 开发数据质量监控框架，自动化校验数据完整性、一致性，异常告警准确率达 95%。</li>
+              <li><i class="fas fa-chevron-right"></i> 带领3人小团队完成数据平台从自建 Hadoop 迁移至阿里云 MaxCompute，节约运维成本 40%。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+              <h3>数据工程师</h3>
+              <span class="company">上海智云科技</span>
+            </div>
+            <span class="exp-date"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i>2017.08 – 2020.08</span>
+          </div>
+          <div class="exp-desc">
+            <ul>
+              <li><i class="fas fa-chevron-right"></i> 参与公司数据仓库建设，负责 ETL 流程开发与维护，使用 Hive 和 Spark SQL 进行数据处理。</li>
+              <li><i class="fas fa-chevron-right"></i> 优化广告效果分析报表，通过预计算和索引将查询响应时间从分钟级降至秒级。</li>
+              <li><i class="fas fa-chevron-right"></i> 协助搭建 Flink 实时计算任务，处理点击流数据，支持实时大屏展示。</li>
+              <li><i class="fas fa-chevron-right"></i> 编写数据字典和设计文档，促进团队知识共享。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 教育背景 -->
+        <div class="main-title">
+          <i class="fas fa-university"></i> 教育背景
+        </div>
+
+        <div class="edu-item">
+          <h4>计算机科学与技术 硕士</h4>
+          <span class="edu-meta"><i class="far fa-calendar-alt"></i> 2015 – 2018</span>
+          <div class="edu-desc">北京理工大学 · 研究方向：大数据处理、分布式系统 · GPA 3.8/4.0</div>
+        </div>
+        <div class="edu-item">
+          <h4>计算机科学与技术 学士</h4>
+          <span class="edu-meta"><i class="far fa-calendar-alt"></i> 2011 – 2015</span>
+          <div class="edu-desc">北京理工大学 · 主修：数据结构、数据库、操作系统 · 校优秀毕业生</div>
+        </div>
+
+        <!-- 项目精选 -->
+        <div class="main-title">
+          <i class="fas fa-rocket"></i> 项目精选
+        </div>
+
+        <div class="project-item">
+          <h4>实时用户行为分析平台</h4>
+          <span class="project-meta">Flink / Kafka / ClickHouse</span>
+          <div class="project-desc">基于 Flink + Kafka + ClickHouse 构建，支持分钟级用户路径分析，每日处理数亿事件，提供多维度实时看板。</div>
+        </div>
+        <div class="project-item">
+          <h4>数据血缘与元数据管理系统</h4>
+          <span class="project-meta">Atlas / 定制解析器</span>
+          <div class="project-desc">开发数据血缘解析工具，基于 Apache Atlas 定制，实现自动化元数据采集和影响分析，覆盖100+离线任务。</div>
+        </div>
+        <div class="project-item">
+          <h4>电商全渠道数据湖建设</h4>
+          <span class="project-meta">AWS Lake Formation / Spark</span>
+          <div class="project-desc">设计 lake house 架构，整合线上、线下交易数据，统一存储并构建 T+1 数据湖，支持分析师自助查询。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 页脚小点缀（可选）-->
+  <div style="text-align: center; margin-top: 0.8rem; color: #3d6180; font-size: 0.8rem; opacity: 0.7;">
+    <i class="fas fa-database"></i> 数据驱动 · 精细落地 <i class="fas fa-database"></i>
+  </div>
+</body>
+</html>
+本回答由 AI 生成，内容仅供参考，请仔细甄别。
+write me a chinese html resume as a data engineer
+我们收到了用户请求："write me a chinese html resume as a data engineer"。这似乎是要求生成一份中文HTML简历，岗位是数据工程师。用户可能希望看到一份可以直接使用的、设计良好的HTML简历。
+
+回顾之前的对话，用户已经要求过 "write a splendid resume for me as a data engineer in chinese in html format"，我们之前已经给出了一份很详细的中文数据工程师简历HTML。现在用户又发了一条类似的请求，但措辞略有不同："write me a chinese html resume as a data engineer"。可能用户没注意到之前已经生成过，或者希望得到另一份不同的简历。考虑到对话上下文，我们可以提供一份新的简历，但风格可以略有变化，比如不同的布局或设计。
+
+不过，用户这次没有要求“splendid”，只是简单地说“write me a chinese html resume as a data engineer”。我们可以生成一份简洁但专业的HTML简历，中文内容，数据工程师岗位。
+
+为了不重复，我们可以设计一个稍微不同的版式，比如采用单栏布局，或者使用更现代的卡片式设计。但内容上仍然是数据工程师的技能、经验等。
+
+考虑到之前的回复已经非常详细且设计精美，再次生成一份同样复杂的简历可能不太必要。或许用户只是想获取代码，我们可以生成一份中等复杂度的简历，包含必要的个人信息、技能、经验、教育等。
+
+注意：我们应当确保输出是完整的HTML代码，可以直接在浏览器中打开。
+
+计划：创建一份单栏或双栏的响应式HTML简历，包含头像或图标，使用中文字体，展示数据工程师的技能、工作经历、项目等。尽量保持简洁但美观。
+
+开始构思：
+
+标题：数据工程师简历
+
+个人信息：姓名、电话、邮箱、地址等。
+
+个人简介：简短描述。
+
+技能：编程语言、大数据工具、数据库、云平台等。
+
+工作经历：至少两个经历，描述职责和成就。
+
+教育背景：学位、学校、时间。
+
+项目经验：一些数据相关项目。
+
+证书/语言。
+
+设计上可以采用浅色背景，柔和的阴影，间距舒适。使用FontAwesome图标。
+
+确保代码是自包含的，带有内联样式或style标签。响应式。
+
+我们开始编写。
+
+由于是第二次请求，可以稍微调整风格，例如左侧深色栏或右侧强调。但为了快速，我们可以采用另一种布局：顶部个人信息，下面分两列，左侧技能和证书，右侧经历和教育。这样与之前不同。
+
+但之前的回复已经是左右分栏，但左侧是浅蓝灰，右侧白色。这次可以尝试顶部深色条，或者卡片式堆叠。
+
+或者，我们制作一份看起来更“现代”的简历，比如使用圆角卡片，清晰的层级。
+
+我决定：采用简洁的单栏流式布局，但用不同的颜色区块区分各部分。例如，头部为深蓝色，显示姓名和职位；然后下方是网格状技能标签；然后经历用时间线样式。保持HTML代码干净。
+
+注意用户要求“chinese html resume”，所以所有内容为中文。
+
+开始写代码。
+
+这是为您生成的一份现代风格的中文数据工程师简历HTML代码。它采用清晰的信息层级与柔和配色，左侧集中展示核心技能与认证，右侧详细描述工作经历与项目，整体设计专业且易于阅读。
+
+html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈思远 · 数据工程师简历</title>
+    <!-- Font Awesome 5 (图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eef2f7;
+            font-family: 'Inter', 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            line-height: 1.5;
+            color: #1f2a44;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 整体卡片容器 */
+        .resume {
+            max-width: 1000px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 30px 50px rgba(28, 45, 75, 0.15);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        /* 头部区域 — 深色背景，突出姓名和职位 */
+        .header {
+            background: linear-gradient(135deg, #13294b, #1f3e6b);
+            color: white;
+            padding: 2.5rem 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .header .title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0.3rem;
+        }
+
+        .header .title i {
+            font-size: 1.3rem;
+            color: #8bb9fe;
+        }
+
+        .header .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1.5rem;
+        }
+
+        .contact-bar .item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .contact-bar .item i {
+            width: 1.2rem;
+            color: #b6d0f0;
+        }
+
+        .contact-bar .item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255,255,255,0.5);
+        }
+
+        .contact-bar .item a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        /* 主内容区域：两列布局 */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+            background-color: #fff;
+        }
+
+        /* 左侧栏 (基础信息/技能/证书) */
+        .sidebar {
+            background-color: #f9fcff;
+            padding: 2rem 2rem;
+            border-right: 1px solid #e2ecf5;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #13294b;
+            margin: 2rem 0 1.2rem 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #d0e0f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title i {
+            color: #2d6fb0;
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+            width: 1.6rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* 技能组 (标签) */
+        .skill-category {
+            margin-bottom: 1.8rem;
+        }
+        .skill-category h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #26547c;
+            margin-bottom: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+        .skill-tag {
+            background: white;
+            border: 1px solid #cbdbe9;
+            color: #1a3a5a;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,30,50,0.02);
+            transition: all 0.15s;
+        }
+        .skill-tag:hover {
+            background: #e1effb;
+            border-color: #1e6ab3;
+        }
+
+        /* 语言和证书条目 */
+        .list-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        .list-item i {
+            color: #1e6ab3;
+            width: 1.8rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .cert-item {
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        .cert-item i {
+            color: #1e6ab3;
+            width: 1.8rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d0e0f0;
+            margin: 1.8rem 0 1rem;
+        }
+
+        /* 右侧栏 (经历、教育、项目) */
+        .right-panel {
+            padding: 2rem 2rem 2rem 2rem;
+            background-color: white;
+        }
+
+        .right-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #13294b;
+            margin: 1.8rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .right-title i {
+            color: #1e6ab3;
+            margin-right: 0.7rem;
+            font-size: 1.2rem;
+            width: 1.8rem;
+        }
+        .right-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* 工作经历卡片 */
+        .exp-item {
+            margin-bottom: 2.2rem;
+        }
+        .exp-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .exp-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #13294b;
+        }
+        .exp-header .company {
+            background-color: #e3f0fc;
+            color: #1f4e7a;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .exp-date {
+            color: #4c6f8f;
+            font-size: 0.9rem;
+            background: #f0f5fa;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            white-space: nowrap;
+        }
+        .exp-desc {
+            margin-top: 0.8rem;
+            padding-left: 0.2rem;
+        }
+        .exp-desc ul {
+            list-style: none;
+        }
+        .exp-desc li {
+            font-size: 0.95rem;
+            color: #23496b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 0.6rem;
+        }
+        .exp-desc li i {
+            color: #1e6ab3;
+            font-size: 0.7rem;
+            margin-top: 0.45rem;
+            width: 1rem;
+        }
+
+        /* 教育和项目条目 */
+        .edu-item, .project-item {
+            margin-bottom: 1.4rem;
+            border-bottom: 1px dashed #dbe7f2;
+            padding-bottom: 1rem;
+        }
+        .edu-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+        .edu-header, .project-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .edu-header h4, .project-header h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #13294b;
+        }
+        .edu-date, .project-date {
+            font-size: 0.85rem;
+            color: #537a9a;
+            background: #f0f7fe;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+        .edu-desc, .project-desc {
+            margin-top: 0.3rem;
+            font-size: 0.93rem;
+            color: #305e83;
+        }
+
+        .project-tech {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-badge {
+            background: white;
+            border: 1px solid #b9d3ef;
+            color: #1c4b77;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e2ecf5;
+            }
+            .header {
+                padding: 1.8rem;
+            }
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- 头部：姓名+职位+联系方式 -->
+        <div class="header">
+            <h1>陈思远</h1>
+            <div class="title">
+                <i class="fas fa-database"></i> 数据工程师 · 大数据架构爱好者
+            </div>
+            <div class="contact-bar">
+                <div class="item"><i class="fas fa-phone-alt"></i> +86 156 0192 8324</div>
+                <div class="item"><i class="far fa-envelope"></i> <a href="mailto:siyuan.chen@example.com">siyuan.chen@example.com</a></div>
+                <div class="item"><i class="fas fa-map-marker-alt"></i> 上海市 · 浦东新区</div>
+                <div class="item"><i class="fab fa-github"></i> <a href="#">github.com/siyuan-data</a></div>
+                <div class="item"><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/siyuan</a></div>
+            </div>
+        </div>
+
+        <!-- 主体部分：两列 -->
+        <div class="main-content">
+            <!-- 左侧栏：技能+证书+语言 -->
+            <div class="sidebar">
+                <!-- 专业技能分类 -->
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i> 技术栈
+                </div>
+
+                <div class="skill-category">
+                    <h3>编程语言</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Scala</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>大数据处理</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">Flink</span>
+                        <span class="skill-tag">Hadoop (HDFS/YARN)</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Hive</span>
+                        <span class="skill-tag">Presto</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>数据仓库 & 数据库</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">数仓建模</span>
+                        <span class="skill-tag">ClickHouse</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>云与编排</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS (EMR/Redshift)</span>
+                        <span class="skill-tag">阿里云 MaxCompute</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">Docker / K8s</span>
+                        <span class="skill-tag">Terraform</span>
+                    </div>
+                </div>
+
+                <!-- 证书与语言 -->
+                <div class="section-title">
+                    <i class="fas fa-certificate"></i> 认证与语言
+                </div>
+
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i> <span>AWS Certified Data Analytics – Specialty</span>
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i> <span>Cloudera CCA 数据工程师</span>
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-check-circle"></i> <span>阿里云大数据专业认证 (ACP)</span>
+                </div>
+                <div class="list-item" style="margin-top: 1rem;">
+                    <i class="fas fa-language"></i> <span>中文 · 母语</span>
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-language"></i> <span>英语 · 流利 (CET-6, 技术文档读写)</span>
+                </div>
+
+                <hr>
+                <!-- 兴趣爱好/额外信息 (可选) -->
+                <div class="section-title">
+                    <i class="fas fa-heart"></i> 兴趣与格言
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-hiking"></i> 开源贡献 · 数据技术社区
+                </div>
+                <div class="list-item">
+                    <i class="fas fa-book-open"></i> “让数据可靠，让分析简单”
+                </div>
+            </div>
+
+            <!-- 右侧栏：经历、教育、项目 -->
+            <div class="right-panel">
+                <!-- 简短介绍 -->
+                <div style="background: #e8f1fc; padding: 1.2rem 1.5rem; border-radius: 20px; margin-bottom: 2rem;">
+                    <i class="fas fa-quote-left" style="color: #1e6ab3; margin-right: 5px;"></i> 
+                    5年数据工程经验，擅长设计高性能数据管道和湖仓一体架构。热衷于用技术解决业务问题，具备优秀的跨团队协作能力。
+                </div>
+
+                <!-- 工作经历 -->
+                <div class="right-title">
+                    <i class="fas fa-briefcase"></i> 工作经历
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>资深数据工程师</h3>
+                        <span class="company">明略数据 · 上海</span>
+                        <span class="exp-date">2021.04 – 至今</span>
+                    </div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> 设计并实施实时用户画像平台，基于 Flink + Kafka + HBase 实现秒级标签更新，支持每日亿级事件接入。</li>
+                            <li><i class="fas fa-chevron-right"></i> 主导数据仓库从 Hive 迁移至 ClickHouse，建设公共层，复杂查询提速 5-10 倍。</li>
+                            <li><i class="fas fa-chevron-right"></i> 开发 Airflow 任务编排与数据血缘追踪工具，提升调度稳定性，任务失败率降低 30%。</li>
+                            <li><i class="fas fa-chevron-right"></i> 负责数据质量体系建设，引入 Great Expectations 自动化校验，覆盖 80% 核心表。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <h3>数据工程师</h3>
+                        <span class="company">趣头条 · 上海</span>
+                        <span class="exp-date">2018.07 – 2021.02</span>
+                    </div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> 参与数据平台开发，负责日志采集、清洗及 ETL 工作，使用 Spark 处理每日 TB 级数据。</li>
+                            <li><i class="fas fa-chevron-right"></i> 优化广告报表业务流程，通过预聚合和列式存储将查询耗时从分钟级降至 10 秒内。</li>
+                            <li><i class="fas fa-chevron-right"></i> 搭建实时监控大盘，基于 Flink + Redis 计算实时曝光/点击指标，支撑运营决策。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 教育背景 -->
+                <div class="right-title">
+                    <i class="fas fa-university"></i> 教育背景
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h4>计算机技术 硕士</h4>
+                        <span class="edu-date">2015 – 2018</span>
+                    </div>
+                    <div class="edu-desc">同济大学 · 研究方向：分布式计算与数据挖掘 · GPA 3.7/4.0</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <h4>软件工程 学士</h4>
+                        <span class="edu-date">2011 – 2015</span>
+                    </div>
+                    <div class="edu-desc">南京邮电大学 · 主修课程：数据结构、数据库原理、操作系统 · 优秀毕业论文</div>
+                </div>
+
+                <!-- 项目精选 -->
+                <div class="right-title">
+                    <i class="fas fa-code-branch"></i> 项目亮点
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>实时风控特征平台</h4>
+                        <span class="project-date">2023</span>
+                    </div>
+                    <div class="project-desc">
+                        基于 Flink CEP 和 Kafka，构建毫秒级特征提取 pipeline，支持 20+ 实时风控规则；将特征数据落地 ClickHouse 供离线分析。
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-badge">Flink</span>
+                        <span class="tech-badge">Kafka</span>
+                        <span class="tech-badge">ClickHouse</span>
+                        <span class="tech-badge">Redis</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>数据湖探索平台</h4>
+                        <span class="project-date">2022</span>
+                    </div>
+                    <div class="project-desc">
+                        基于 AWS S3 + Spark + Iceberg 建设湖仓一体架构，实现数据高效入湖和时间旅行查询，简化 ETL 流程，存储成本降低 25%。
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-badge">Iceberg</span>
+                        <span class="tech-badge">Spark</span>
+                        <span class="tech-badge">AWS Glue</span>
+                        <span class="tech-badge">S3</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <h4>数据质量监控中心</h4>
+                        <span class="project-date">2021</span>
+                    </div>
+                    <div class="project-desc">
+                        开发自动化数据质量监控框架，支持完整性、准确性校验，通过 Webhook 对接企业微信告警，覆盖 200+ 数据表。
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-badge">Great Expectations</span>
+                        <span class="tech-badge">Airflow</span>
+                        <span class="tech-badge">Prometheus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚装饰 -->
+    <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #4b6f8f; opacity: 0.6;">
+        <i class="fas fa-code"></i> 数据即资产 · 工程铸就价值 <i class="fas fa-code"></i>
+    </div>
+</body>
+</html>
