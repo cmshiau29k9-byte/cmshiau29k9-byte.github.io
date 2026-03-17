@@ -1,145 +1,568 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蕭某某 · 數據工程師履歷</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Helvetica Neue', sans-serif; }
-        body { background: #eef2f5; padding: 20px; }
-        .container { max-width: 1100px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden; }
-        header { background: #1e3a5f; color: white; padding: 1.2rem 2rem; }
-        header h1 { font-weight: 500; font-size: 1.8rem; }
-        nav { background: #2b4c7c; padding: 0.8rem 2rem; display: flex; flex-wrap: wrap; gap: 2rem; }
-        nav a { color: #f0f7ff; text-decoration: none; font-weight: 500; transition: 0.2s; padding: 0.2rem 0; border-bottom: 2px solid transparent; }
-        nav a:hover { border-bottom-color: #ffd966; color: #ffd966; }
-        main { padding: 2rem; }
-        .resume-header { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; border-bottom: 3px solid #ffb347; padding-bottom: 1.5rem; margin-bottom: 2rem; }
-        .name-title h2 { font-size: 2.5rem; color: #103450; margin-bottom: 0.3rem; }
-        .name-title .sub { font-size: 1.2rem; color: #2b4c7c; font-weight: 400; }
-        .contact { background: #f0f7ff; padding: 0.8rem 1.5rem; border-radius: 40px; display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.8rem; }
-        .contact span { color: #1d4468; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 2.2rem; margin-top: 1.5rem; }
-        .left-panel { background: #f7fafd; padding: 1.8rem; border-radius: 24px; }
-        .right-panel { padding: 0.2rem; }
-        .section-title { font-weight: 600; color: #103450; font-size: 1.4rem; border-bottom: 2px solid #d0e2f0; padding-bottom: 0.4rem; margin: 1.5rem 0 1rem; }
-        .section-title:first-of-type { margin-top: 0; }
-        .skill-tag { background: #dae9f5; color: #103450; padding: 0.3rem 1rem; border-radius: 30px; display: inline-block; margin: 0.2rem 0.2rem; font-size: 0.9rem; border: 1px solid #b1cee7; }
-        .job-item { margin-bottom: 1.8rem; }
-        .job-title { font-weight: 700; color: #0d3352; font-size: 1.1rem; }
-        .company { color: #2b4c7c; font-weight: 500; }
-        .date { color: #687f98; font-size: 0.9rem; margin-bottom: 0.4rem; }
-        .job-desc { margin-left: 0.8rem; list-style-type: circle; }
-        .cert-item { background: #fce9d8; padding: 0.6rem 1rem; border-radius: 12px; margin-bottom: 0.7rem; border-left: 5px solid #ff8c42; }
-        hr { border: none; border-top: 1px dashed #b8d2e7; margin: 1rem 0; }
-        footer { background: #e2eaf2; text-align: center; padding: 1rem; color: #345e81; font-size: 0.9rem; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张明 · 数据与电气工程师 · 简历</title>
+  <!-- 优雅字体 & 图标库 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #d4dde9 0%, #bcc9db 100%);
+      font-family: "Inter", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      color: #1e2b3c;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 主卡片 — 纯粹、轻盈、富有层次 */
+    .resume-card {
+      max-width: 1100px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 30px 50px rgba(0, 20, 40, 0.25), 0 12px 24px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    /* 页眉区域 — 深色优雅 */
+    .resume-header {
+      background: #0f2a3f;
+      background-image: radial-gradient(circle at 10% 20%, #1d405b, #0a1e2f);
+      color: white;
+      padding: 2.5rem 3rem;
+      border-bottom: 4px solid #5297c6;
+    }
+
+    .name-title h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      font-family: "Inter", "Noto Sans SC", sans-serif;
+    }
+
+    .name-title .subhead {
+      font-size: 1.3rem;
+      font-weight: 350;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .subhead span {
+      background: rgba(82, 151, 198, 0.25);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 400;
+      border: 0.5px solid rgba(255,255,255,0.2);
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.98rem;
+      color: #e0edf5;
+    }
+
+    .contact-bar i {
+      width: 1.5rem;
+      color: #7bb3d9;
+      font-size: 1.1rem;
+    }
+
+    .contact-bar a, .contact-bar span {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-bar a:hover {
+      color: #b3daf5;
+    }
+
+    /* 双栏核心布局 */
+    .resume-main {
+      display: grid;
+      grid-template-columns: 1fr 2.1fr;
+      background: #fff;
+    }
+
+    /* 左侧栏 — 轻柔背景，细腻信息 */
+    .sidebar {
+      background-color: #f5f9fe;
+      padding: 2rem 2rem 2.5rem 2rem;
+      border-right: 1px solid #e2eaf2;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1d4b6e;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid rgba(29, 75, 110, 0.2);
+      padding-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title i {
+      color: #2f6690;
+      font-size: 1rem;
+      width: 1.4rem;
+    }
+
+    /* 个人简介 */
+    .profile-text {
+      font-size: 0.95rem;
+      color: #1f3a4f;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      background: white;
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #e8eef6;
+    }
+
+    /* 技能组 — 干净标签 */
+    .skill-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .skill-group h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #173e57;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: white;
+      border: 1px solid #cbdbe9;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #153e58;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      transition: 0.1s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: #2f6690;
+      background: #e8f0fe;
+    }
+
+    /* 语言 & 证书 列表 */
+    .info-list {
+      list-style: none;
+      background: white;
+      border-radius: 18px;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #e0eaf3;
+    }
+
+    .info-list li {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed #d2e0ec;
+      font-size: 0.95rem;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list i {
+      width: 1.8rem;
+      color: #2f6690;
+      font-size: 1rem;
+    }
+
+    .info-list span {
+      font-weight: 500;
+      color: #0b2c40;
+    }
+
+    .info-list small {
+      margin-left: auto;
+      color: #587b9c;
+      font-weight: 400;
+    }
+
+    /* 右侧栏 — 经历与教育 */
+    .main-content {
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
+      background: white;
+    }
+
+    .entry {
+      margin-bottom: 2rem;
+    }
+
+    .entry-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-title {
+      font-size: 1.2rem;
+      font-weight: 650;
+      color: #0a2a3f;
+    }
+
+    .entry-subtitle {
+      font-weight: 600;
+      color: #2d5675;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .entry-org {
+      font-weight: 500;
+      color: #3f5f7a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .entry-date {
+      font-size: 0.9rem;
+      background: #eaf1f9;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      color: #1e4a6f;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .entry-desc {
+      margin-top: 0.8rem;
+      padding-left: 0.2rem;
+    }
+
+    .entry-desc ul {
+      list-style: none;
+    }
+
+    .entry-desc li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: #1f3f57;
+    }
+
+    .entry-desc li i {
+      color: #3b78a7;
+      font-size: 0.8rem;
+      margin-top: 0.2rem;
+      min-width: 1.2rem;
+    }
+
+    .project-highlight {
+      background-color: #f2f8ff;
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      margin-top: 1.8rem;
+      border: 1px solid #d3e3f2;
+    }
+
+    .project-highlight .entry-header {
+      margin-bottom: 0.2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0eaf3;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    /* 响应式 */
+    @media screen and (max-width: 750px) {
+      .resume-main {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: 0;
+        border-bottom: 1px solid #dae2ec;
+      }
+      .resume-header {
+        padding: 1.8rem;
+      }
+      .name-title h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media print {
+      body { background: white; padding: 0.2in; }
+      .resume-card { box-shadow: none; border-radius: 0; }
+    }
+
+    /* 小点缀 */
+    .badge-icon {
+      background: #2f6690;
+      color: white;
+      border-radius: 30px;
+      padding: 0.1rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      margin-left: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <header><h1>👤 蕭某某 · 數據工程師履歷</h1></header>
-    <nav>
-        <a href="index.html">🏠 首頁(介紹)</a>
-        <a href="pl.html">📜 PL認證說明</a>
-        <a href="dp.html">🎓 DP認證說明</a>
-        <a href="resume.html">👤 蕭某某履歷</a>
-    </nav>
-    <main>
-        <div class="resume-header">
-            <div style="flex:1;">
-                <div class="name-title">
-                    <h2>蕭某某</h2>
-                    <div class="sub">資深數據工程師 · 資料管線專家</div>
-                </div>
-                <div class="contact">
-                    <span>✉️ moumou.hsiao@example.com</span>
-                    <span>📞 +886 912 345 678</span>
-                    <span>📍 台北, 台灣</span>
-                    <span>🔗 linkedin.com/in/moumou-data</span>
-                </div>
-            </div>
-            <div style="background:#fff2e0; padding:0.8rem 1.5rem; border-radius: 60px;">
-                <span style="font-weight:700;">PL 認證 · DP 認證</span>  (數據工程/數據專業)
-            </div>
+  <div class="resume-card">
+    <!-- 头部：姓名 + 混合角色 -->
+    <header class="resume-header">
+      <div class="name-title">
+        <h1>张明</h1>
+        <div class="subhead">
+          数据工程师 · 电气工程师
+          <span>融合工业与数据</span>
         </div>
+      </div>
+      <div class="contact-bar">
+        <span><i class="fas fa-envelope"></i> <a href="mailto:ming.zhang@ieee.org">ming.zhang@ieee.org</a></span>
+        <span><i class="fas fa-phone-alt"></i> +86 138 0257 3416</span>
+        <span><i class="fas fa-map-marker-alt"></i> 上海 · 中国</span>
+        <span><i class="fas fa-globe"></i> linkedin.com/in/zhangming</span>
+      </div>
+    </header>
 
-        <div class="grid-2">
-            <div class="left-panel">
-                <div class="section-title">📌 專業技能</div>
-                <div>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL (進階)</span>
-                    <span class="skill-tag">Apache Spark</span>
-                    <span class="skill-tag">Airflow</span>
-                    <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">dbt / Dataform</span>
-                    <span class="skill-tag">AWS (S3, Redshift, EMR)</span>
-                    <span class="skill-tag">GCP BigQuery</span>
-                    <span class="skill-tag">Docker / Kubernetes</span>
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">Data Lakehouse (Iceberg)</span>
-                </div>
+    <!-- 主体双栏 -->
+    <div class="resume-main">
+      <!-- 左侧：技能、语言、证书 -->
+      <aside class="sidebar">
+        <!-- 简短介绍 -->
+        <section class="section">
+          <div class="section-title"><i class="fas fa-user-pen"></i> 关于我</div>
+          <div class="profile-text">
+            电气工程出身，深耕数据工程。善于在工业物联网、智能电网场景中搭建端到端数据管道，将自动化系统与大数据分析结合，用数据优化物理世界。
+          </div>
+        </section>
 
-                <div class="section-title">🏅 認證與資格</div>
-                <div class="cert-item">✅ <strong>PL 認證</strong> (Professional in Data Engineering) · 2024</div>
-                <div class="cert-item">✅ <strong>DP 認證</strong> (Data Professional - Expert Level) · 2023</div>
-                <div class="cert-item">✅ AWS Certified Data Analytics · 2024</div>
-                <div class="cert-item">✅  CNCF Kubernetes 基礎認證 (KCNA) </div>
-
-                <div class="section-title">🎓 教育</div>
-                <div style="margin-bottom:1.2rem;">
-                    <div><strong>國立台灣大學</strong> 資料科學碩士 (2020-2022)</div>
-                    <div style="color:#2d5f8b;">論文：基於分散式計算之即時特徵工程</div>
-                </div>
-                <div>
-                    <div><strong>國立清華大學</strong> 資訊工程學士 (2016-2020)</div>
-                </div>
+        <!-- 技能分区 -->
+        <section class="section">
+          <div class="section-title"><i class="fas fa-code"></i> 核心技术</div>
+          
+          <div class="skill-group">
+            <h4><i class="fas fa-database" style="color:#1f6793;"></i> 数据工程</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Apache Spark</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">Hadoop</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">数据仓库</span>
+              <span class="skill-tag">ETL/ELT</span>
+              <span class="skill-tag">AWS (EMR/Redshift)</span>
+              <span class="skill-tag">Azure</span>
             </div>
+          </div>
 
-            <div class="right-panel">
-                <div class="section-title">💼 工作經歷</div>
-                <div class="job-item">
-                    <div class="job-title">資深數據工程師</div>
-                    <div class="company">智雲數據科技 · 台北</div>
-                    <div class="date">2023.08 – 至今</div>
-                    <ul class="job-desc">
-                        <li>設計並維護每日 TB 級數據管線 (Airflow + Spark)，資料延遲降低 35% 。</li>
-                        <li>導入 dbt 進行數據轉換，建立資料倉庫 (Redshift) 自動化測試與文件。</li>
-                        <li>帶領 2 位 junior 工程師，協助 PL 認證考試準備。</li>
-                    </ul>
-                </div>
-                <div class="job-item">
-                    <div class="job-title">數據工程師</div>
-                    <div class="company">未來金融科技 · 新加坡 (遠端)</div>
-                    <div class="date">2022.01 – 2023.06</div>
-                    <ul class="job-desc">
-                        <li>開發即時詐欺偵測管線：使用 Kafka + Flink + Cassandra，處理延遲低於 200ms。</li>
-                        <li>建置資料血緣與品質監控 (Great Expectations)，並取得 DP 認證。</li>
-                    </ul>
-                </div>
-                <div class="job-item">
-                    <div class="job-title">資料分析實習生</div>
-                    <div class="company">零售數據顧問公司 · 台北</div>
-                    <div class="date">2021.07 – 2021.12</div>
-                    <ul class="job-desc">
-                        <li>協助客戶建立 RFM 分析儀表板 (Power BI) 與 SQL 查詢優化。</li>
-                        <li>參與 PL 認證基礎課程，奠定數據工程基礎。</li>
-                    </ul>
-                </div>
-
-                <div class="section-title">📁 代表性專案</div>
-                <div style="margin-bottom:0.8rem;">
-                    <strong>「湖倉一體」遷移計畫</strong> — 帶領團隊將部分 Hive 資料遷移至 Apache Iceberg，查詢效能提升 40% 並支援 ACID 。
-                </div>
-                <div>
-                    <strong>數據治理框架</strong> — 導入 OpenMetadata 與自動化標籤，完成 DP 認證要求之實作報告。
-                </div>
-                <hr>
-                <p style="color:#345e81;">📢 蕭某某同時擁有 PL 與 DP 雙認證，善於打通數據工程與分析之間的橋樑。</p>
+          <div class="skill-group">
+            <h4><i class="fas fa-bolt" style="color:#1f6793;"></i> 电气工程</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">电路设计</span>
+              <span class="skill-tag">PLC 编程</span>
+              <span class="skill-tag">MATLAB/Simulink</span>
+              <span class="skill-tag">嵌入式系统</span>
+              <span class="skill-tag">电力系统分析</span>
+              <span class="skill-tag">SCADA</span>
+              <span class="skill-tag">自动控制</span>
+              <span class="skill-tag">物联网</span>
+              <span class="skill-tag">Modbus</span>
+              <span class="skill-tag">Eagle CAD</span>
             </div>
+          </div>
+
+          <div class="skill-group">
+            <h4><i class="fas fa-chart-line" style="color:#1f6793;"></i> 交叉领域</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">工业大数据</span>
+              <span class="skill-tag">预测性维护</span>
+              <span class="skill-tag">数字孪生</span>
+              <span class="skill-tag">时序数据库</span>
+              <span class="skill-tag">MQTT</span>
+              <span class="skill-tag">OPC UA</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 语言 & 证书 -->
+        <section class="section">
+          <div class="section-title"><i class="fas fa-language"></i> 语言能力</div>
+          <ul class="info-list">
+            <li><i class="fas fa-comment-dots"></i> <span>中文</span> <small>母语</small></li>
+            <li><i class="fas fa-comment-dots"></i> <span>英语</span> <small>流利 (IELTS 7.5)</small></li>
+            <li><i class="fas fa-comment-dots"></i> <span>德语</span> <small>基础 (A2)</small></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <div class="section-title"><i class="fas fa-certificate"></i> 资格认证</div>
+          <ul class="info-list">
+            <li><i class="fas fa-cloud"></i> <span>AWS 认证数据工程师</span> <small>2023</small></li>
+            <li><i class="fas fa-microchip"></i> <span>电气工程师 (中级) · 中国</span> <small>2020</small></li>
+            <li><i class="fas fa-robot"></i> <span>物联网专项认证 (华为)</span> <small>2022</small></li>
+          </ul>
+        </section>
+
+        <!-- 小兴趣/额外 -->
+        <section class="section">
+          <div class="section-title"><i class="fas fa-heart"></i> 专业领域</div>
+          <div class="skill-tags" style="margin-top:0.2rem;">
+            <span class="skill-tag">智能电网</span>
+            <span class="skill-tag">工业4.0</span>
+            <span class="skill-tag">边缘计算</span>
+            <span class="skill-tag">实时流处理</span>
+          </div>
+        </section>
+      </aside>
+
+      <!-- 右侧：经历 + 教育 + 重点项目 -->
+      <main class="main-content">
+        <!-- 工作经历 -->
+        <section class="section">
+          <div class="section-title"><i class="fas fa-briefcase"></i> 工作经历</div>
+          
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">高级数据工程师</span>
+              <span class="entry-date">2021 – 至今</span>
+            </div>
+            <div class="entry-org"><i class="fas fa-building"></i> 极能科技 · 上海 (工业物联网部门)</div>
+            <div class="entry-desc">
+              <ul>
+                <li><i class="fas fa-chevron-right"></i> 设计基于Kafka + Spark Streaming的实时数据平台，接入全国200+变电站的传感器数据，延迟<150ms，日处理量15TB。</li>
+                <li><i class="fas fa-chevron-right"></i> 与电气团队共同开发设备健康度评估模型，通过历史数据训练异常检测算法，提前预警故障，降低30%非计划停机。</li>
+                <li><i class="fas fa-chevron-right"></i> 搭建数据湖（AWS S3 + Glue），整合PLC历史数据与实时指标，支持数据分析师与电气工程师自助查询。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">电气工程师 / 数据专员</span>
+              <span class="entry-date">2018 – 2021</span>
+            </div>
+            <div class="entry-org"><i class="fas fa-building"></i> 国家电网 · 杭州 (变电技术部)</div>
+            <div class="entry-desc">
+              <ul>
+                <li><i class="fas fa-chevron-right"></i> 负责变电站自动化系统设计（PLC、继保、SCADA），同时推动数字化改造，将传统信号接入时序数据库（InfluxDB）。</li>
+                <li><i class="fas fa-chevron-right"></i> 开发基于历史负荷数据的短期电力预测模型（Python + Prophet），提高调度准确率至94%。</li>
+                <li><i class="fas fa-chevron-right"></i> 搭建简易数据看板，实时展示断路器状态、负载率，帮助运维团队快速响应。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 重点项目 (融合两个领域的亮点) -->
+        <section class="project-highlight">
+          <div class="entry-header" style="margin-bottom:0.8rem;">
+            <span class="entry-title" style="font-size:1.2rem;"><i class="fas fa-microchip" style="margin-right:6px;"></i>标志性融合项目</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:1.2rem;">
+            <div>
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.2rem;">
+                <span style="font-weight:650; color:#1b4b72;">智能电网数据分析平台</span>
+                <span class="badge-icon">端到端</span>
+              </div>
+              <ul style="list-style:none; padding-left:0.2rem;">
+                <li style="display:flex; gap:0.7rem; margin-bottom:0.4rem; font-size:0.95rem;"><i class="fas fa-circle" style="color:#2f6690; font-size:0.45rem; margin-top:0.5rem;"></i> 结合电气仿真(Simulink)与实时数据流，开发变压器健康指数模型，部署于边缘网关。</li>
+                <li style="display:flex; gap:0.7rem; margin-bottom:0.4rem; font-size:0.95rem;"><i class="fas fa-circle" style="color:#2f6690; font-size:0.45rem; margin-top:0.5rem;"></i> 数据管道：Modbus → MQTT → Kafka → Flink → 时序数据库；Grafana可视化。</li>
+              </ul>
+            </div>
+            <div>
+              <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.2rem;">
+                <span style="font-weight:650; color:#1b4b72;">工业物联网预测性维护</span>
+                <span class="badge-icon">产线落地</span>
+              </div>
+              <ul style="list-style:none; padding-left:0.2rem;">
+                <li style="display:flex; gap:0.7rem; margin-bottom:0.4rem; font-size:0.95rem;"><i class="fas fa-circle" style="color:#2f6690; font-size:0.45rem; margin-top:0.5rem;"></i> 从西门子PLC采集高频振动数据，利用Spark进行特征工程，训练随机森林分类器，实现电机剩余寿命预测。</li>
+                <li style="display:flex; gap:0.7rem; margin-bottom:0.4rem; font-size:0.95rem;"><i class="fas fa-circle" style="color:#2f6690; font-size:0.45rem; margin-top:0.5rem;"></i> 成果：生产线意外停线时间减少27%，获集团技术创新奖。</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section class="section" style="margin-top:1.5rem;">
+          <div class="section-title"><i class="fas fa-graduation-cap"></i> 教育背景</div>
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title">数据科学 硕士</span>
+              <span class="entry-date">2016 – 2018</span>
+            </div>
+            <div class="entry-org">清华大学 · 北京 (GPA 3.9/4.0)</div>
+          </div>
+          <div class="entry" style="margin-top:1.2rem;">
+            <div class="entry-header">
+              <span class="entry-title">电气工程及其自动化 学士</span>
+              <span class="entry-date">2012 – 2016</span>
+            </div>
+            <div class="entry-org">上海交通大学 · 上海 (优秀毕业生)</div>
+          </div>
+        </section>
+
+        <!-- 额外学术 / 论文 (可选，体现深度) -->
+        <hr>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap; font-size:0.9rem; color:#36648b;">
+          <span><i class="fas fa-file-alt"></i> 论文：基于边缘计算的配电网故障检测 (《电力系统自动化》, 2023)</span>
+          <span><i class="fas fa-users"></i> 演讲：数据工程在智能电网中的应用 · 数据峰会2024</span>
         </div>
-    </main>
-    <footer>© 2025 蕭某某 · 數據工程師履歷 (本頁面為示範)</footer>
-</div>
+      </main>
+    </div>
+    <!-- 极简脚注，增加精致感 -->
+    <div style="background: #f5f9fe; padding: 0.7rem 2rem; border-top: 1px solid #deeaf4; font-size:0.8rem; color:#557c9a; display:flex; justify-content:space-between;">
+      <span><i class="far fa-file-pdf"></i> PDF版本可应要求提供</span>
+      <span>⚡ 数据·电气 · 融合创造价值</span>
+    </div>
+  </div>
 </body>
 </html>
